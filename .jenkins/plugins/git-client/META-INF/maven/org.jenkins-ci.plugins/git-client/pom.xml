@@ -1,33 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>1.532.2</version>
+    <version>2.19</version>
   </parent>
 
   <groupId>org.jenkins-ci.plugins</groupId>
   <artifactId>git-client</artifactId>
-  <version>1.19.0</version>
+  <version>2.2.0</version>
   <packaging>hpi</packaging>
-  <name>Jenkins GIT client plugin</name>
+
+  <name>Jenkins Git client plugin</name>
   <description>Utility plugin for Git support in Jenkins</description>
   <url>http://wiki.jenkins-ci.org/display/JENKINS/Git+Client+Plugin</url>
-
+  <inceptionYear>2013</inceptionYear>
   <licenses>
     <license>
       <name>The MIT License (MIT)</name>
-      <url>http://opensource.org/licenses/MIT</url>
+      <url>https://opensource.org/licenses/MIT</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
 
   <developers>
-    <developer>
-      <id>ndeloof</id>
-      <name>Nicolas De Loof</name>
-      <email>nicolas.deloof@gmail.com</email>
-    </developer>
     <developer>
       <id>markewaite</id>
       <name>Mark Waite</name>
@@ -39,25 +37,37 @@
     <connection>scm:git:git://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
     <developerConnection>scm:git:git@github.com:jenkinsci/${project.artifactId}-plugin.git</developerConnection>
     <url>http://github.com/jenkinsci/${project.artifactId}-plugin</url>
-    <tag>git-client-1.19.0</tag>
+    <tag>git-client-2.2.0</tag>
   </scm>
 
   <properties>
-    <findbugs-maven-plugin.version>3.0.1</findbugs-maven-plugin.version>
-    <jacoco-maven-plugin.version>0.7.4.201502262128</jacoco-maven-plugin.version>
-    <!-- Maven plugin versions provided by parent are outdated. -->
-    <!-- Generating site report with "mvn site" fails without these updated versions. -->
-    <maven-dependency-plugin.version>2.9</maven-dependency-plugin.version>
-    <maven-enforcer-plugin.version>1.4</maven-enforcer-plugin.version>
-    <maven-hpi-plugin.version>1.113</maven-hpi-plugin.version>
-    <maven-project-info-reports-plugin.version>2.7</maven-project-info-reports-plugin.version>
-    <maven-release-plugin.version>2.5.2</maven-release-plugin.version>
-    <maven-site-plugin.version>3.4</maven-site-plugin.version>
-    <!-- End of updated versions required for "mvn site" -->
-    <maven-javadoc-plugin.version>2.10.1</maven-javadoc-plugin.version>
-    <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
-    <jgit.version>3.7.1.201504261725-r</jgit.version>
+    <concurrency>1</concurrency>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <argLine>-Dfile.encoding=${project.build.sourceEncoding}</argLine>
+    <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
+    <jacoco-maven-plugin.version>0.7.7.201606060606</jacoco-maven-plugin.version>
+    <jenkins.version>1.625.3</jenkins.version>
+    <java.level>7</java.level>
+    <jgit.version>4.5.0.201609210915-r</jgit.version>
   </properties>
+
+  <repositories>
+    <repository>
+      <id>jgit-repository</id>
+      <name>Eclipse JGit Repository</name>
+      <url>https://repo.eclipse.org/content/groups/releases/</url>
+    </repository>
+    <repository>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </pluginRepository>
+  </pluginRepositories>
 
   <dependencies>
     <dependency>
@@ -75,38 +85,55 @@
       <version>${jgit.version}</version>
     </dependency>
     <dependency>
+      <!-- Include jgit's Apache HTTP client so that we can avoid
+           automatic NTLM on Windows. See JENKINS-37934 -->
+      <groupId>org.eclipse.jgit</groupId>
+      <artifactId>org.eclipse.jgit.http.apache</artifactId>
+      <version>${jgit.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>structs</artifactId>
+      <version>1.5</version>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>git-server</artifactId>
-      <version>1.6</version>
+      <version>1.7</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.googlecode.json-simple</groupId>
+      <artifactId>json-simple</artifactId>
+      <version>1.1.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.modules</groupId>
       <artifactId>sshd</artifactId>
-      <version>1.6</version>
+      <version>1.7</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
       <artifactId>jsr305</artifactId>
-      <version>3.0.0</version>
+      <version>3.0.1</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>ssh-credentials</artifactId>
-      <version>1.11</version>
+      <version>1.12</version>
     </dependency>
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpclient</artifactId>
-      <version>4.4.1</version>
+      <version>4.5.2</version>
     </dependency>
     <dependency>
       <groupId>commons-codec</groupId>
@@ -117,7 +144,7 @@
     <dependency>
       <groupId>org.objenesis</groupId>
       <artifactId>objenesis</artifactId>
-      <version>2.1</version>
+      <version>2.4</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -129,48 +156,72 @@
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
       <artifactId>annotations</artifactId>
-      <version>3.0.0</version>
+      <version>3.0.1u2</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
 
-  <repositories>
-    <repository>
-      <id>jgit-repository</id>
-      <name>Eclipse JGit Repository</name>
-      <url>https://repo.eclipse.org/content/groups/releases/</url>
-    </repository>
-    <repository>
-      <id>repo.jenkins-ci.org</id>
-      <url>http://repo.jenkins-ci.org/public/</url>
-    </repository>
-  </repositories>
-
-  <pluginRepositories>
-    <pluginRepository>
-      <id>repo.jenkins-ci.org</id>
-      <url>http://repo.jenkins-ci.org/public/</url>
-    </pluginRepository>
-  </pluginRepositories>
-
   <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.6.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.19.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>2.10.4</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
     <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>${jacoco-maven-plugin.version}</version>
         <executions>
           <execution>
+            <id>default-prepare-agent</id>
             <goals>
               <goal>prepare-agent</goal>
             </goals>
           </execution>
           <execution>
-            <id>report</id>
-            <phase>prepare-package</phase>
+            <id>default-report</id>
             <goals>
               <goal>report</goal>
             </goals>
+          </execution>
+          <execution>
+            <id>default-check</id>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+            <rules>
+              <rule>
+                <element>BUNDLE</element>
+                  <limits>
+                    <limit>
+                      <counter>COMPLEXITY</counter>
+                      <value>COVEREDRATIO</value>
+                      <minimum>0.40</minimum>
+                    </limit>
+                  </limits>
+                </rule>
+              </rules>
+            </configuration>
           </execution>
         </executions>
       </plugin>
@@ -193,15 +244,13 @@
       <plugin>
         <groupId>org.jenkins-ci.tools</groupId>
         <artifactId>maven-hpi-plugin</artifactId>
-        <version>${maven-hpi-plugin.version}</version>
         <extensions>true</extensions>
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>findbugs-maven-plugin</artifactId>
-        <version>${findbugs-maven-plugin.version}</version>
         <configuration>
-          <excludeFilterFile>src/findbugs/excludesFilter.xml</excludeFilterFile>
+          <skip>${skipFindbugs}</skip>
           <failOnError>${maven.findbugs.failure.strict}</failOnError>
           <xmlOutput>true</xmlOutput>
           <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
@@ -209,14 +258,22 @@
         <executions>
           <execution>
             <id>run-findbugs</id>
-            <phase>verify</phase> 
+            <phase>verify</phase>
             <goals>
-              <goal>check</goal> 
+              <goal>check</goal>
             </goals>
           </execution>
         </executions>
       </plugin>
     </plugins>
   </build>
-
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>${maven-project-info-reports-plugin.version}</version>
+      </plugin>
+    </plugins>
+  </reporting>
 </project>

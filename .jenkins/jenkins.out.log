@@ -1,0 +1,19 @@
+Running from: C:\Program Files (x86)\Jenkins\jenkins.war
+Jenkins home directory: C:\Program Files (x86)\Jenkins found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+Running from: C:\Program Files (x86)\Jenkins\jenkins.war
+Jenkins home directory: C:\Program Files (x86)\Jenkins found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+Trying to load models from C:\Program%20Files%20(x86)\Jenkins\plugins\git-notes\WEB-INF\classes\models
+Loading C:\Program%20Files%20(x86)\Jenkins\plugins\git-notes\WEB-INF\classes\models/git_notes_publisher.rb
+getConfigPage -> /git_notes_publisher/config
+instance created: #<GitNotesPublisher:0xd4d026> (hudson.tasks.Publisher)
+Running from: C:\Program Files (x86)\Jenkins\jenkins.war
+Jenkins home directory: C:\Program Files (x86)\Jenkins found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+Trying to load models from C:\Program%20Files%20(x86)\Jenkins\plugins\git-notes\WEB-INF\classes\models
+Loading C:\Program%20Files%20(x86)\Jenkins\plugins\git-notes\WEB-INF\classes\models/git_notes_publisher.rb
+getConfigPage -> /git_notes_publisher/config
+instance created: #<GitNotesPublisher:0x1bdaa02> (hudson.tasks.Publisher)
+getConfigPage -> /git_notes_publisher/config
+DEBUG: setDebug: JavaMail version 1.4.4
+DEBUG: setDebug: JavaMail version 1.4.4
+DEBUG: setDebug: JavaMail version 1.4.4
+DEBUG: setDebug: JavaMail version 1.4.4

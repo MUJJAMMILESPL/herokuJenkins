@@ -1,0 +1,9 @@
+Started on Jan 15, 2017 7:58:25 AM
+Using strategy: Default
+[poll] Last Built Revision: Revision 0e8df41c65c640464201f63c243b9eb8daf938e1 (refs/remotes/origin/master)
+using GIT_ASKPASS to set credentials 
+ > git.exe ls-remote -h https://github.com/MUJJAMMILESPL/CustomListViewCreator # timeout=10
+Found 1 remote heads on https://github.com/MUJJAMMILESPL/CustomListViewCreator
+[poll] Latest remote head revision on refs/heads/master is: 158f4ec8a2c77ccb75c66edcadc2369c93707cdc
+Done. Took 0.18 sec
+Changes found

@@ -9,15 +9,16 @@ Specification-Title: A Jenkins authentication plugin that delegates to
  acquired OAuth token to interact with the Github API to determine a u
  sers level of access to Jenkins.
 Implementation-Title: github-oauth
-Implementation-Version: 0.22.2
+Implementation-Version: 0.25
 Group-Id: org.jenkins-ci.plugins
 Short-Name: github-oauth
-Long-Name: Github Authentication plugin
+Long-Name: GitHub Authentication plugin
 Url: http://wiki.jenkins-ci.org/display/JENKINS/Github+OAuth+Plugin
 Compatible-Since-Version: 1.93
-Plugin-Version: 0.22.2
-Hudson-Version: 1.586
-Jenkins-Version: 1.586
-Plugin-Dependencies: mailer:1.4,github-api:1.69,git:2.0.3
+Plugin-Version: 0.25
+Hudson-Version: 2.7.1
+Jenkins-Version: 2.7.1
+Plugin-Dependencies: mailer:1.18,git:3.0.0,matrix-project:1.7,github-a
+ pi:1.77
 Plugin-Developers: Sam Gleske:sag47:sam.mxracer@gmail.com
 

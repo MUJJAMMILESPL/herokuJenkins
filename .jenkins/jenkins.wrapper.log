@@ -1,0 +1,20 @@
+2017-01-14 07:59:25 - Starting C:\Program Files (x86)\Jenkins\jre\bin\java -Xrs -Xmx256m -Dhudson.lifecycle=hudson.lifecycle.WindowsServiceLifecycle -jar "C:\Program Files (x86)\Jenkins\jenkins.war" --httpPort=8080 --webroot="C:\Program Files (x86)\Jenkins\war"
+2017-01-14 07:59:25 - Started 4000
+2017-01-14 08:17:16 - Stopping Jenkins
+2017-01-14 08:17:16 - ProcessKill 4000
+2017-01-14 08:17:16 - Send SIGINT 4000
+2017-01-14 08:17:16 - SIGINT to 4000 failed - Killing as fallback
+2017-01-14 08:17:16 - Send SIGINT 4000
+2017-01-14 08:17:16 - SIGINT to 4000 failed - Killing as fallback
+2017-01-14 08:17:16 - Finished Jenkins
+2017-01-14 08:17:17 - Starting C:\Program Files (x86)\Jenkins\jre\bin\java -Xrs -Xmx256m -Dhudson.lifecycle=hudson.lifecycle.WindowsServiceLifecycle -jar "C:\Program Files (x86)\Jenkins\jenkins.war" --httpPort=8080 --webroot="C:\Program Files (x86)\Jenkins\war"
+2017-01-14 08:17:17 - Started 3264
+2017-01-14 08:50:48 - Stopping Jenkins
+2017-01-14 08:50:48 - ProcessKill 3264
+2017-01-14 08:50:48 - Send SIGINT 3264
+2017-01-14 08:50:48 - SIGINT to 3264 failed - Killing as fallback
+2017-01-14 08:50:48 - Send SIGINT 3264
+2017-01-14 08:50:48 - SIGINT to 3264 failed - Killing as fallback
+2017-01-14 08:50:48 - Finished Jenkins
+2017-01-14 08:50:49 - Starting C:\Program Files (x86)\Jenkins\jre\bin\java -Xrs -Xmx256m -Dhudson.lifecycle=hudson.lifecycle.WindowsServiceLifecycle -jar "C:\Program Files (x86)\Jenkins\jenkins.war" --httpPort=8080 --webroot="C:\Program Files (x86)\Jenkins\war"
+2017-01-14 08:50:49 - Started 3456

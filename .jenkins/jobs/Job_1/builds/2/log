@@ -1,0 +1,24 @@
+Started by user [8mha:AAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZh/dLi1CL93NKsrMTc3Myc7IzEPABySr+eyAAAAA==[0mmujjammilkhan
+Building in workspace C:\Program Files (x86)\Jenkins\workspace\Job_1
+Cloning the remote Git repository
+Cloning repository https://github.com/MUJJAMMILESPL/CustomListViewCreator
+ > git.exe init C:\Program Files (x86)\Jenkins\workspace\Job_1 # timeout=10
+Fetching upstream changes from https://github.com/MUJJAMMILESPL/CustomListViewCreator
+ > git.exe --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git.exe fetch --tags --progress https://github.com/MUJJAMMILESPL/CustomListViewCreator +refs/heads/*:refs/remotes/origin/*
+ > git.exe config remote.origin.url https://github.com/MUJJAMMILESPL/CustomListViewCreator # timeout=10
+ > git.exe config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe config remote.origin.url https://github.com/MUJJAMMILESPL/CustomListViewCreator # timeout=10
+Fetching upstream changes from https://github.com/MUJJAMMILESPL/CustomListViewCreator
+using GIT_ASKPASS to set credentials 
+ > git.exe fetch --tags --progress https://github.com/MUJJAMMILESPL/CustomListViewCreator +refs/heads/*:refs/remotes/origin/*
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision 3758e85b817e3168fe0db3b54b43169da8390abe (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 3758e85b817e3168fe0db3b54b43169da8390abe
+First time build. Skipping changelog.
+ERROR: Unable to find build script at /build.xml
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mERROR: [GitHub Commit Status Setter] - Root URL isn't configured yet. Cannot compute absolute URL., setting build result to FAILURE
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mFinished: FAILURE

@@ -1,44 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <hudson>
   <disabledAdministrativeMonitors/>
-  <version>1.0</version>
+  <version>2.32.1</version>
   <numExecutors>2</numExecutors>
   <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
-  <authorizationStrategy class="hudson.security.GlobalMatrixAuthorizationStrategy">
-    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:meme</permission>
-    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:meme</permission>
-    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:meme</permission>
-    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:meme</permission>
-    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:meme</permission>
-    <permission>hudson.model.Computer.Build:meme</permission>
-    <permission>hudson.model.Computer.Configure:meme</permission>
-    <permission>hudson.model.Computer.Connect:meme</permission>
-    <permission>hudson.model.Computer.Create:meme</permission>
-    <permission>hudson.model.Computer.Delete:meme</permission>
-    <permission>hudson.model.Computer.Disconnect:meme</permission>
-    <permission>hudson.model.Hudson.Administer:meme</permission>
-    <permission>hudson.model.Hudson.ConfigureUpdateCenter:meme</permission>
-    <permission>hudson.model.Hudson.Read:anonymous</permission>
-    <permission>hudson.model.Hudson.Read:meme</permission>
-    <permission>hudson.model.Hudson.RunScripts:meme</permission>
-    <permission>hudson.model.Hudson.UploadPlugins:meme</permission>
-    <permission>hudson.model.Item.Build:meme</permission>
-    <permission>hudson.model.Item.Cancel:meme</permission>
-    <permission>hudson.model.Item.Configure:meme</permission>
-    <permission>hudson.model.Item.Create:meme</permission>
-    <permission>hudson.model.Item.Delete:meme</permission>
-    <permission>hudson.model.Item.Discover:meme</permission>
-    <permission>hudson.model.Item.Read:anonymous</permission>
-    <permission>hudson.model.Item.Read:meme</permission>
-    <permission>hudson.model.Item.Workspace:meme</permission>
-    <permission>hudson.model.Run.Delete:meme</permission>
-    <permission>hudson.model.Run.Update:meme</permission>
-    <permission>hudson.model.View.Configure:meme</permission>
-    <permission>hudson.model.View.Create:meme</permission>
-    <permission>hudson.model.View.Delete:meme</permission>
-    <permission>hudson.model.View.Read:anonymous</permission>
-    <permission>hudson.model.View.Read:meme</permission>
+  <authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy">
+    <denyAnonymousReadAccess>false</denyAnonymousReadAccess>
   </authorizationStrategy>
   <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
     <disableSignup>true</disableSignup>
@@ -53,6 +21,7 @@
   <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
   <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
   <clouds/>
+  <quietPeriod>5</quietPeriod>
   <scmCheckoutRetryCount>0</scmCheckoutRetryCount>
   <views>
     <hudson.model.AllView>
@@ -64,8 +33,11 @@
     </hudson.model.AllView>
   </views>
   <primaryView>All</primaryView>
-  <slaveAgentPort>0</slaveAgentPort>
+  <slaveAgentPort>-1</slaveAgentPort>
   <label></label>
+  <crumbIssuer class="hudson.security.csrf.DefaultCrumbIssuer">
+    <excludeClientIPFromCrumb>false</excludeClientIPFromCrumb>
+  </crumbIssuer>
   <nodeProperties/>
   <globalNodeProperties/>
 </hudson>

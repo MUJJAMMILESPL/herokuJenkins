@@ -1,0 +1,58 @@
+Started by user [8mha:AAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZh/dLi1CL93NKsrMTc3Myc7IzEPABySr+eyAAAAA==[0mmujjammilkhan
+Building in workspace C:\Program Files (x86)\Jenkins\workspace\Job_1
+ > git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/MUJJAMMILESPL/CustomListViewCreator # timeout=10
+Fetching upstream changes from https://github.com/MUJJAMMILESPL/CustomListViewCreator
+ > git.exe --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git.exe fetch --tags --progress https://github.com/MUJJAMMILESPL/CustomListViewCreator +refs/heads/*:refs/remotes/origin/*
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision 5817d4038711c8b7beea31c467fa8bcc28c295b5 (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 5817d4038711c8b7beea31c467fa8bcc28c295b5
+ > git.exe rev-list 5817d4038711c8b7beea31c467fa8bcc28c295b5 # timeout=10
+[Job_1] $ cmd.exe /C "ant.bat -file build.xml -Dsf.maxPoll=20 -Dsf.username=mujjammilkhan@gmail.com.trailhead -Dsf.serverurl=https://login.salesforce.com -Dsf.password=espl@1234 deploy && exit %%ERRORLEVEL%%"
+Unable to locate tools.jar. Expected to find it in C:\Program Files\Java\jre1.8.0_111\lib\tools.jar
+Buildfile: C:\Program Files (x86)\Jenkins\workspace\Job_1\build.xml
+
+[8mha:AAAAYB+LCAAAAAAAAP9b85aBtbiIQT6jNKU4P0+vJLE4u1gvPjGvRM8xryQksSg9tcQvvyTVvqNr/s+Vl9uYGBgqihikoKqT8/OK83NS9ZwhNEghAwQwghQWAADROOumXQAAAA==[0mdeploy:
+[sf:deploy] Request for a deploy submitted successfully.
+[sf:deploy] Request ID for the current deploy task: 0Af2800000aIIzLCAW
+[sf:deploy] Waiting for server to finish processing the request...
+[sf:deploy] Request Status: InProgress (1/24)  -- Processing Type: ApexPage
+[sf:deploy] Request Status: Succeeded
+[sf:deploy] *********** DEPLOYMENT SUCCEEDED ***********
+[sf:deploy] Finished request 0Af2800000aIIzLCAW successfully.
+
+[8mha:AAAAYB+LCAAAAAAAAP9b85aBtbiIQSGjNKU4P0+vJLE4u1gvPjGvRM8xr8S/tCQ5PzfVL78ktUuDM0uMry+HiYGhoohBCqo8OT+vOD8nVc8ZQoMUMkAAI0hhAQAUXUdTXgAAAA==[0mBUILD SUCCESSFUL
+Total time: 15 seconds
+Adding note to namespace "master":
+Build succeeded
+******
+ > git.exe notes --ref=master append -F C:\Program Files (x86)\Jenkins\workspace\Job_1\git-note6102457997959427897txt # timeout=10
+ > git.exe --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git.exe push https://github.com/MUJJAMMILESPL/CustomListViewCreator refs/notes/*
+ERROR: Step ‘Git Publisher’ aborted due to exception: 
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mjava.lang.InterruptedException
+	at java.lang.ProcessImpl.waitFor(Unknown Source)
+	at hudson.Proc$LocalProc.join(Proc.java:320)
+	at hudson.Proc.joinWithTimeout(Proc.java:166)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.launchCommandIn(CliGitAPIImpl.java:1768)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.launchCommandWithCredentials(CliGitAPIImpl.java:1516)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.access$300(CliGitAPIImpl.java:67)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl$8.execute(CliGitAPIImpl.java:1846)
+	at hudson.plugins.git.GitPublisher.perform(GitPublisher.java:372)
+	at hudson.tasks.BuildStepMonitor$3.perform(BuildStepMonitor.java:45)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:779)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.performAllBuildSteps(AbstractBuild.java:720)
+	at hudson.model.Build$BuildExecution.post2(Build.java:185)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.post(AbstractBuild.java:665)
+	at hudson.model.Run.execute(Run.java:1753)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:98)
+	at hudson.model.Executor.run(Executor.java:404)
+[Set GitHub commit status (universal)] ERROR on repos [] (sha:5817d40) with context:Job_1
+Finished: FAILURE
